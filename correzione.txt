@@ -1,0 +1,45 @@
+Correzione
+File: ./verifiche/amoruso.xlsx
+  Foglio: Foglio0
+    Cella B103: Formula corretta: =SUM(B2:B102) (+1 punti)
+    Cella D103: Formula corretta: =MAX(D2:D101) (+1 punti)
+    Cella F103: Formula corretta: =MIN(F2:F101) (+1 punti)
+  Foglio: Foglio1
+    Cella B4: Formula corretta: =SUM(B2:B3) (+1 punti)
+
+Punteggio totale complessivo ottenuto: 4
+
+
+File: ./verifiche/bertinelli.xlsx
+  Foglio: Foglio0
+    Cella B103: Formula corretta: =SUM(B2:B102) (+1 punti)
+    Cella D103: Formula corretta: =MAX(D2:D101) (+1 punti)
+    Cella F103: Formula corretta: =MIN(F2:F101) (+1 punti)
+  Foglio: Foglio1
+    Cella B4: Formula corretta: =SUM(B2:B3) (+1 punti)
+
+Punteggio totale complessivo ottenuto: 4
+
+
+File: ./verifiche/biondi.xlsx
+  Foglio: Foglio0
+    Cella B103: Formula corretta: =SUM(B2:B102) (+1 punti)
+    Cella D103: Formula corretta: =MAX(D2:D101) (+1 punti)
+    Cella F103: Formula corretta: =MIN(F2:F101) (+1 punti)
+  Foglio: Foglio1
+    Cella B4: Formula corretta: =SUM(B2:B3) (+1 punti)
+
+Punteggio totale complessivo ottenuto: 4
+
+
+File: ./verifiche/canali.xlsx
+  Foglio: Foglio0
+    Cella B103: Formula corretta: =SUM(B2:B102) (+1 punti)
+    Cella D103: Formula corretta: =MAX(D2:D101) (+1 punti)
+    Cella F103: Formula corretta: =MIN(F2:F101) (+1 punti)
+  Foglio: Foglio1
+    Cella B4: Formula corretta: =SUM(B2:B3) (+1 punti)
+
+Punteggio totale complessivo ottenuto: 4
+
+

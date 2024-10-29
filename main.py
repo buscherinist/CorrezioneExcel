@@ -41,7 +41,7 @@ def controlla_formule(nome_file_excel, soluzioni):
 
         for cella, (formula_attesa, punti) in celle.items():
             valore_cella = foglio[cella].value
-
+            valore_cella = valore_cella.replace(" ", "")
             # Verifica se la formula è corretta
             if valore_cella == formula_attesa:
                 risultati[nome_file_excel][foglio_nome][cella] = f"Formula corretta: {formula_attesa} (+{punti} punti)"
@@ -72,12 +72,18 @@ def calcola_punteggio_totale(file_elenco_excel, file_soluzioni):
 file_elenco_excel = 'elencoalunni.txt'
 file_soluzioni = 'soluzioni.txt'
 risultati_globale, punteggio_totale = calcola_punteggio_totale(file_elenco_excel, file_soluzioni)
-
+with open("correzione.txt", "w") as file:
+    file.write(f"Correzione\n")
 # Stampa i risultati e il punteggio totale complessivo
 for nome_file, fogli in risultati_globale.items():
-    print(f"File: {nome_file}")
-    for foglio, celle in fogli.items():
-        print(f"  Foglio: {foglio}")
-        for cella, risultato in celle.items():
-            print(f"    Cella {cella}: {risultato}")
-    print(f"\nPunteggio totale complessivo ottenuto: {punteggio_totale}")
+    with open("correzione.txt", "a") as file:
+        file.write(f"File: {nome_file}\n")
+        print(f"File: {nome_file}")
+        for foglio, celle in fogli.items():
+            file.write(f"  Foglio: {foglio}\n")
+            print(f"  Foglio: {foglio}")
+            for cella, risultato in celle.items():
+                file.write(f"    Cella {cella}: {risultato}\n")
+                print(f"    Cella {cella}: {risultato}")
+        file.write(f"\nPunteggio totale complessivo ottenuto: {punteggio_totale}\n\n\n")
+        print(f"\nPunteggio totale complessivo ottenuto: {punteggio_totale}")
