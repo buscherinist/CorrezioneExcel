@@ -1,4 +1,5 @@
 import openpyxl
+from sympy import sympify, simplify
 
 def carica_soluzioni(file_soluzioni):
     # Legge il file di testo con le soluzioni e i punti, organizzati per foglio
@@ -29,6 +30,25 @@ def carica_soluzioni(file_soluzioni):
     return soluzioni
 
 
+def formule_uguali(formula1, formula2):
+    try:
+        # Converte le formule in espressioni simboliche
+        expr1 = sympify(formula1)  # Sostituisci con il nome corretto
+        expr2 = sympify(formula2)
+        print("1")
+        print(expr1, expr2)
+        # Semplifica le espressioni
+        simplified_expr1 = simplify(expr1)
+        simplified_expr2 = simplify(expr2)
+        print("2")
+        print(simplified_expr1, simplified_expr2)
+
+        # Confronta le espressioni semplificate
+        return simplified_expr1 == simplified_expr2
+    except Exception as e:
+        print(f"Errore nel processamento delle formule: {e}")
+        return False
+
 def controlla_formule(nome_file_excel, soluzioni):
     # Apre il file Excel e controlla le formule
     workbook = openpyxl.load_workbook(nome_file_excel, data_only=False)
@@ -43,7 +63,9 @@ def controlla_formule(nome_file_excel, soluzioni):
             valore_cella = foglio[cella].value
             valore_cella = valore_cella.replace(" ", "")
             # Verifica se la formula è corretta
-            if valore_cella == formula_attesa:
+            uguali = formule_uguali(valore_cella, formula_attesa)
+            #if valore_cella == formula_attesa:
+            if uguali:
                 risultati[nome_file_excel][foglio_nome][cella] = f"Formula corretta: {formula_attesa} (+{punti} punti)"
                 punteggio_totale += punti
             else:
