@@ -1,3 +1,4 @@
+Foglio0
 B103
 =SUM(B2:B102)
 1
@@ -6,4 +7,8 @@ D103
 1
 F103
 =MIN(F2:F101)
+1
+Foglio1
+B4
+=SUM(B2:B3)
 1
