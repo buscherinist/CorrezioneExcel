@@ -33,8 +33,8 @@ def carica_soluzioni(file_soluzioni):
 def formule_uguali(formula1, formula2):
     try:
         # Converte le formule in espressioni simboliche
-        expr1 = sympify(formula1)  # Sostituisci con il nome corretto
-        expr2 = sympify(formula2)
+        expr1 = sympify(formula1.lstrip('='))  # Sostituisci con il nome corretto
+        expr2 = sympify(formula2.lstrip('='))
         print("1")
         print(expr1, expr2)
         # Semplifica le espressioni
