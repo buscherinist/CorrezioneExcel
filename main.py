@@ -81,7 +81,7 @@ def calcola_punteggio_totale2(file_elenco_excel, file_soluzioni):
 
     # Calcola il punteggio per ciascun file Excel
     for nome_file_excel in nomi_file_excel:
-        risultati, punteggio_totale = controlla_formule(nome_file_excel, soluzioni)
+        risultati, punteggio_totale = controlla_formule2(nome_file_excel, soluzioni)
         risultati_globale.update(risultati)
         punteggio_totale_globale += punteggio_totale
 
@@ -143,9 +143,9 @@ for nome_file, celle in risultati_globale.items():
 
 #nuova parte
 # Esempio di utilizzo
-file_elenco_excel = 'file_elenco.txt'
-file_soluzioni = 'soluzioni.txt'
-risultati_globale, punteggio_totale_globale = calcola_punteggio_totale(file_elenco_excel, file_soluzioni)
+file_elenco_excel = 'elencoalunni.txt'
+file_soluzioni = 'soluzioni2.txt'
+risultati_globale, punteggio_totale_globale = calcola_punteggio_totale2(file_elenco_excel, file_soluzioni)
 
 # Stampa i risultati e il punteggio totale complessivo
 for nome_file, fogli in risultati_globale.items():
